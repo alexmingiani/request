@@ -1,6 +1,11 @@
 [build]
-  publish = "public"
-  functions = "netlify/functions"
+  functions = "/functions"
 
 [functions]
   node_bundler = "esbuild"
+
+[build.environment]
+  NODE_VERSION = "18"
+  PUPPETEER_SKIP_CHROMIUM_DOWNLOAD = "true"
+[[plugins]]
+  package = "@netlify/plugin-puppeteer"
